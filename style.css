@@ -1,0 +1,135 @@
+/* ===============================
+   PALETA DE CORES (VERMELHO & PRETO)
+   =============================== */
+
+@define-color red        #ff3b3b;
+@define-color darkred    #b11212;
+
+@define-color text       #e6e6e6;
+@define-color subtext1   #c2c2c2;
+@define-color subtext0   #9a9a9a;
+
+@define-color overlay2   #6a6a6a;
+@define-color overlay1   #4a4a4a;
+@define-color overlay0   #2a2a2a;
+
+@define-color surface2   #1f1f1f;
+@define-color surface1   #161616;
+@define-color surface0   #101010;
+
+@define-color base       #0b0b0b;
+@define-color mantle     #070707;
+@define-color crust      #030303;
+
+
+/* ===============================
+   CONFIGURAÇÕES GLOBAIS
+   =============================== */
+
+* {
+  font-family: "JetBrains Mono Nerd", monospace;
+  border: none;
+  min-height: 0;
+}
+
+
+/* ===============================
+   WAYBAR
+   =============================== */
+
+window#waybar {
+  background-color: alpha(@base, 0.90);
+  border-radius: 0;
+  color: @red;
+  padding: 2px 12px;
+  transition: 0.3s all;
+}
+
+
+/* ===============================
+   MÓDULOS
+   =============================== */
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0 1rem;
+  color: @text;
+  border: none;
+}
+
+.modules-center {
+  padding: 2px;
+}
+
+
+/* ===============================
+   ÍCONE CUSTOM
+   =============================== */
+
+#custom-icon {
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+
+/* ===============================
+   JANELA ATIVA
+   =============================== */
+
+#window {
+  font-weight: bold;
+  color: @red;
+  transition: all 0.3s ease;
+}
+
+
+/* ===============================
+   WORKSPACES
+   =============================== */
+
+#workspaces {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#workspaces button {
+  color: @subtext0;
+  border-radius: 0;
+  transition: 0.2s ease-out;
+  border-bottom: 1px solid transparent;
+}
+
+#workspaces button.urgent {
+  border-bottom: 2px solid @darkred;
+  color: @darkred;
+}
+
+#workspaces button.active {
+  border-bottom: 2px solid @red;
+  color: @red;
+}
+
+
+/* ===============================
+   TRAY
+   =============================== */
+
+#tray {
+  color: @text;
+}
+
+
+/* ===============================
+   RELÓGIO
+   =============================== */
+
+#clock {
+  font-weight: bold;
+  color: @text;
+  transition: all 0.3s ease;
+}
+
+#clock:hover {
+  color: @red;
+}
