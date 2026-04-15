@@ -1,0 +1,62 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 6,
+
+  "modules-left": [
+    "wlr/taskbar"
+  ],
+
+  "modules-right": [
+    "tray",
+    "clock",
+    "mpris",
+    "cpu",
+    "memory",
+    "battery"
+  ],
+  
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip": true,
+    "on-click": "activate",
+    "sort-by-app-id": true
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "clock": {
+    "format": " {:%H:%M}"
+  },
+
+  "mpris": {
+    "player": "spotify",
+    "format": " {title}",
+    "max-length": 30
+  },
+  "memory": {
+    "interval": 5,
+    "format": "RAM {}%",
+    "tooltip": true
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% ",
+    "format-charging": "{capacity}% ⚡",
+    "format-plugged": "{capacity}% ",
+    "tooltip": true
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "CPU {usage}%"
+  }
+  
+}

@@ -1,135 +1,108 @@
 /* ===============================
-   PALETA DE CORES (VERMELHO & PRETO)
+   PALETA
    =============================== */
 
-@define-color red        #ff3b3b;
-@define-color darkred    #b11212;
-
-@define-color text       #e6e6e6;
-@define-color subtext1   #c2c2c2;
-@define-color subtext0   #9a9a9a;
-
-@define-color overlay2   #6a6a6a;
-@define-color overlay1   #4a4a4a;
-@define-color overlay0   #2a2a2a;
-
-@define-color surface2   #1f1f1f;
-@define-color surface1   #161616;
-@define-color surface0   #101010;
-
-@define-color base       #0b0b0b;
-@define-color mantle     #070707;
-@define-color crust      #030303;
+@define-color bubble rgba(28, 28, 28, 0.75);
+@define-color bubble-hover rgba(40, 40, 40, 0.85);
+@define-color text #e6e6e6;
+@define-color text-dim #777777;
+@define-color accent #ffffff;
 
 
 /* ===============================
-   CONFIGURAÇÕES GLOBAIS
+   GLOBAL
    =============================== */
 
 * {
-  font-family: "JetBrains Mono Nerd", monospace;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
   border: none;
   min-height: 0;
 }
 
 
 /* ===============================
-   WAYBAR
+   BARRA TRANSPARENTE
    =============================== */
 
 window#waybar {
-  background-color: alpha(@base, 0.90);
-  border-radius: 0;
-  color: @red;
-  padding: 2px 12px;
-  transition: 0.3s all;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 
 /* ===============================
-   MÓDULOS
+   TASKBAR
    =============================== */
 
-.modules-left,
-.modules-center,
-.modules-right {
-  padding: 0 1rem;
+#taskbar {
+  margin: 6px;
+}
+
+#taskbar button {
+  background: @bubble;
   color: @text;
-  border: none;
+
+  margin: 0 6px;
+  padding: 6px 14px;
+
+  border-radius: 14px;
+  transition: all 0.2s ease;
 }
 
-.modules-center {
-  padding: 2px;
+#taskbar button:hover {
+  background: @bubble-hover;
 }
 
-
-/* ===============================
-   ÍCONE CUSTOM
-   =============================== */
-
-#custom-icon {
-  font-size: 15px;
-  padding-right: 5px;
-}
-
-
-/* ===============================
-   JANELA ATIVA
-   =============================== */
-
-#window {
+#taskbar button.active {
+  background: @accent;
+  color: #111111;
   font-weight: bold;
-  color: @red;
-  transition: all 0.3s ease;
 }
 
 
 /* ===============================
-   WORKSPACES
+   MÓDULOS DIREITA
    =============================== */
 
-#workspaces {
-  font-weight: bold;
-  font-size: 12px;
+#tray,
+#clock,
+#cpu,
+#memory,
+#battery,
+#mpris {
+  background: @bubble;
+  color: @text;
+
+  margin: 6px 4px;
+  padding: 6px 14px;
+
+  border-radius: 14px;
+  transition: all 0.2s ease;
 }
 
-#workspaces button {
-  color: @subtext0;
-  border-radius: 0;
-  transition: 0.2s ease-out;
-  border-bottom: 1px solid transparent;
-}
-
-#workspaces button.urgent {
-  border-bottom: 2px solid @darkred;
-  color: @darkred;
-}
-
-#workspaces button.active {
-  border-bottom: 2px solid @red;
-  color: @red;
+#tray:hover,
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#mpris:hover {
+  background: @bubble-hover;
 }
 
 
 /* ===============================
-   TRAY
+   AJUSTE PARA ESQUERDA
    =============================== */
 
 #tray {
-  color: @text;
+  margin-right: 14px;
 }
 
 
 /* ===============================
-   RELÓGIO
+   CLOCK
    =============================== */
 
 #clock {
   font-weight: bold;
-  color: @text;
-  transition: all 0.3s ease;
-}
-
-#clock:hover {
-  color: @red;
 }
